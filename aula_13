@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+
+  ));
+}
+
+class AppAula extends StatefulWidget {
+  const AppAula({Key? key}) : super(key: key);
+
+  @override
+  _AppAulaState createState() => _AppAulaState();
+}
+
+class _AppAulaState extends State<AppAula> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("bem vindo"),
+        backgroundColor: Colors.brown,
+      ),
+      body: ListView(
+        children: [
+          Image.asset(
+            'imagens/logo_cafeteria.jpg',
+            fit: BoxFit.cover,
+          ),
+        Padding(padding: EdgeInsets.all(15)),
+          Center(
+            child: ElevatedButton.icon(
+                onPressed:(){Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Loja()));
+                },
+
+            )
+          )
+
+        ],
+
+      ),
+    );
+  }
+}
+class Loja extends StatefulWidget {
+  const Loja({Key? key}) : super(key: key);
+
+  @override
+  _LojaState createState() => _LojaState();
+}
+
+class _LojaState extends State<Loja> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Pedidos"),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.wine_bar),
+            title: Text('Café'),
+
+
+          ),
+          ListTile(
+            leading: Icon(Icons.account_box_rounded),
+            title: Text("contato do estabelicimento"),
+          ),
+          ListTile(
+            leading: Icon(Icons.access_alarm),
+            title: Text("horarios"),
+          ),
+          ElevatedButton(
+            onPressed: (){},
+            child: Text("fazer pedido"),
+          ),
+
+          Padding(padding: EdgeInsets.all(32)),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: (){
+                Navigator.pop(context);
+
+              },
+              icon: Icon(Icons.arrow_back),
+              label: Text("Voltar"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
