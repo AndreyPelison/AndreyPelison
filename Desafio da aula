@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: tela(),
+  ));
+}
+
+class tela extends StatefulWidget {
+  const tela({Key? key}) : super(key: key);
+
+  @override
+  _telaState createState() => _telaState();
+}
+
+class _telaState extends State<tela> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('cadastre-se'),
+        backgroundColor: Colors.red,
+      ),
+      body: Container(
+          child: Column(
+            children: <Widget>[
+
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.credit_card),
+                    labelText: "Digite o numero do seu cartão"
+
+                ),
+                ),
+
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.lock_outlined),
+                    labelText: "Codigo de segurança do cartão"
+                ),
+              ),
+
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.calendar_today),
+                    labelText: "Data de validade do cartão"
+                ),
+              ),
+
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.account_box),
+                    labelText: "Seu nome"
+
+                ),
+              ),
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.location_on_outlined),
+                    labelText: "Seu CPF"
+
+                ),
+              ),
+
+              TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.attach_email),
+                    labelText: "Seu e-mail"
+
+                ),
+              ),
+            ],
+
+          ),
+        ),
+
+    );
+
+  }
+
+}
