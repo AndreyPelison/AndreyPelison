@@ -1,0 +1,8 @@
+pacote  projetos.Hospital.lib ;
+public  class  App {
+public  static  void  main ( String [] args ) {
+  Paciente p1 =  novo  Paciente ();
+  Medico m1 =  novo  Medico ();
+  Internacao i1 =  novo  Internacao ();
+}
+}
